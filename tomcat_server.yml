@@ -1,0 +1,13 @@
+---
+- name: install apache server
+  become: yes
+  hosts: all
+  tasks:
+    - name: install apache2 and update packages
+      apt:
+        name: apache2
+        state: present
+    - name: restart apache2
+      service:
+        name: apache2
+        state: restarted
