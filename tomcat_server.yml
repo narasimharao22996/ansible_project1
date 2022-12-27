@@ -1,13 +1,13 @@
 ---
-- name: install apache server
+- name: install tomcat9 server
   become: yes
   hosts: all
   tasks:
-    - name: install apache2 and update packages
+    - name: install tomcat9 and update packages
       apt:
-        name: apache2
+        name: tomcat9
         state: present
-    - name: restart apache2
+    - name: restart tomcat9
       service:
-        name: apache2
+        name: tomcat9
         state: restarted
